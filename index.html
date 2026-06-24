@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A playful FLAMES name game inspired by Filipino elementary school notebooks.">
+    <title>FLAMES</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game-board" aria-labelledby="page-title">
+        <div class="masthead">
+          <div>
+            <p class="kicker">Crush Calculator</p>
+            <h1 id="page-title">FLAMES</h1>
+          </div>
+          <div class="pencil" aria-hidden="true">
+            <span class="pencil-tip"></span>
+            <span class="pencil-body"></span>
+            <span class="pencil-band"></span>
+            <span class="pencil-eraser"></span>
+          </div>
+        </div>
+
+        <form class="names-form" id="flames-form">
+          <label>
+            <span>Name 1</span>
+            <input id="name-one" name="nameOne" type="text" autocomplete="off" maxlength="40" placeholder="Your name">
+          </label>
+          <label>
+            <span>Name 2</span>
+            <input id="name-two" name="nameTwo" type="text" autocomplete="off" maxlength="40" placeholder="Crush, friend, classmate">
+          </label>
+          <div class="actions">
+            <button class="icon-button" type="button" id="swap-button" title="Swap names" aria-label="Swap names">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 7h11l-3-3m3 3-3 3M17 17H6l3 3m-3-3 3-3"/>
+              </svg>
+            </button>
+            <button class="primary-button" type="submit">Check</button>
+            <button class="icon-button" type="reset" title="Clear" aria-label="Clear">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 7h16M10 11v6M14 11v6M6 7l1 14h10l1-14M9 7V4h6v3"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <section class="result-panel" aria-live="polite">
+          <div class="result-stamp" id="result-stamp">?</div>
+          <div>
+            <p class="result-label" id="result-label">Write two names</p>
+            <p class="result-copy" id="result-copy">Cross out matching letters, count what remains, then let FLAMES decide.</p>
+          </div>
+        </section>
+
+        <ol class="flames-track" id="flames-track" aria-label="FLAMES outcomes">
+          <li data-letter="F"><b>F</b><span>Friends</span></li>
+          <li data-letter="L"><b>L</b><span>Love</span></li>
+          <li data-letter="A"><b>A</b><span>Affection</span></li>
+          <li data-letter="M"><b>M</b><span>Marriage</span></li>
+          <li data-letter="E"><b>E</b><span>Enemy</span></li>
+          <li data-letter="S"><b>S</b><span>Siblings</span></li>
+        </ol>
+
+        <section class="scratch-work" aria-labelledby="scratch-title">
+          <div class="scratch-heading">
+            <h2 id="scratch-title">Scratch work</h2>
+            <span id="count-badge">0 letters left</span>
+          </div>
+          <div class="scratch-grid">
+            <div>
+              <h3 id="scratch-name-one">Name 1</h3>
+              <p id="letters-one" class="letters"></p>
+            </div>
+            <div>
+              <h3 id="scratch-name-two">Name 2</h3>
+              <p id="letters-two" class="letters"></p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
